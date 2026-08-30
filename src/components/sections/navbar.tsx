@@ -27,7 +27,7 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "animate-fade-down fixed top-4 left-1/2 z-50 flex -translate-x-1/2 items-center gap-1 rounded-full border border-border bg-background-elevated/80 px-2 py-2 backdrop-blur-md transition-shadow duration-300 sm:top-6",
+        "animate-fade-down fixed top-4 left-1/2 z-50 flex w-[calc(100%-2rem)] max-w-fit -translate-x-1/2 items-center gap-1 overflow-x-auto scrollbar-none rounded-full border border-border bg-background-elevated/80 px-2 py-2 backdrop-blur-md transition-shadow duration-300 sm:top-6",
         scrolled && "shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
       )}
     >
@@ -43,16 +43,19 @@ export function Navbar() {
           <a
             key={link.href}
             href={link.href}
-            className="rounded-full px-3.5 py-1.5 text-sm text-foreground-muted transition-colors duration-200 hover:bg-surface-hover hover:text-foreground sm:px-4"
+            className={cn(
+              "shrink-0 rounded-full px-3 py-2 text-xs whitespace-nowrap text-foreground-muted transition-colors duration-200 hover:bg-surface-hover hover:text-foreground sm:px-4 sm:py-1.5 sm:text-sm",
+              link.href === "#competencias" && "hidden min-[400px]:inline-flex"
+            )}
           >
             {link.label}
           </a>
         ))}
       </div>
 
-      <div className="mx-1 h-4 w-px bg-border" />
+      <div className="mx-1 hidden h-4 w-px bg-border sm:block" />
 
-      <div className="flex items-center gap-1 pr-1">
+      <div className="hidden items-center gap-1 pr-1 sm:flex">
         <a
           href={profile.links.github}
           target="_blank"
