@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 const facts = [
   { label: "Foco", value: "Fullstack Web & Mobile" },
   { label: "Abordagem", value: "Arquitetura antes de código" },
-  { label: "Base", value: "Portugal, remoto-friendly" },
+  { label: "Base", value: "Portugal, disponível para remoto" },
 ];
 
 export function About() {
@@ -26,14 +26,16 @@ export function About() {
             </p>
             <p>
               Sinto-me em casa tanto na base de dados como na interface — desde a modelação de
-              esquemas relacionais e escrita de queries eficientes, até à construção de interfaces
-              fluidas e acessíveis com React e Next.js. Essa visão de ponta a ponta é o que me
-              permite tomar decisões de arquitetura com consciência do impacto real que têm no
-              utilizador final.
+              esquemas relacionais e a escrita de consultas eficientes, até à construção de
+              interfaces fluidas e acessíveis com React e Next.js. Essa visão de ponta a ponta é
+              o que me permite tomar decisões de arquitetura com consciência do impacto real que
+              têm no utilizador final.
             </p>
             <p>
-              Dou valor a código legível, testável e a boas práticas de segurança desde o primeiro
-              commit — não como um passo extra, mas como parte inseparável de construir bem.
+              Trabalho com autonomia em todas as fases de um projeto — do levantamento de
+              requisitos ao deploy em produção — e dou valor a código legível, testável e a boas
+              práticas de segurança desde o primeiro commit, não como um passo extra, mas como
+              parte inseparável de construir bem.
             </p>
           </div>
         </Reveal>

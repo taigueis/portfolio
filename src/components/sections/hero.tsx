@@ -50,8 +50,10 @@ export function Hero() {
           style={delayStyle(2)}
           className="animate-fade-up max-w-xl text-balance text-base leading-relaxed text-foreground-muted sm:text-lg"
         >
-          Sou {profile.name}, {profile.role} focado em {profile.tagline.toLowerCase()}.
-          Construo produtos escaláveis do zero — da base de dados à interface.
+          Sou o {profile.name}, {profile.role} especializado no desenvolvimento Fullstack
+          Web & Mobile. Projeto e construo soluções digitais completas, escaláveis e de
+          elevado desempenho — desde a modelação da base de dados e arquitetura de backend
+          até à interface de utilizador.
         </p>
 
         <div

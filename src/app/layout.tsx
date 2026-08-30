@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 const title = "Tiago Costa | Software Engineer & Fullstack Developer";
 const description =
-  "Portfólio de Engenharia de Software e Desenvolvimento Fullstack. Especialista em Next.js, TypeScript, arquitetura de sistemas e aplicações web/mobile de alta performance.";
+  "Portfólio de Engenharia de Software e Desenvolvimento Fullstack. Especialista em Next.js, TypeScript, arquitetura de sistemas e aplicações web/mobile de elevado desempenho.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -66,7 +66,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: profile.name,
-  jobTitle: "Software Engineer",
+  jobTitle: profile.role,
   description,
   email: `mailto:${profile.email}`,
   url: siteUrl,

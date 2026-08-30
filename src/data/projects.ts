@@ -21,7 +21,7 @@ export const featuredProject: FeaturedProject = {
   title: "União das Francesinhas",
   client: "Website & Plataforma Administrativa",
   description:
-    "Plataforma pública e painel de administração para um espaço de restauração, com gestão dinâmica de ementa, motor autónomo de calendário de reabertura e uma superfície de autenticação endurecida ao nível de produção.",
+    "Plataforma pública e painel de administração para um espaço de restauração, com gestão dinâmica de ementa, motor autónomo de reabertura após encerramento temporário e uma superfície de autenticação endurecida ao nível de produção.",
   status: "Em Produção",
   url: "https://www.uniaofrancesinhas.pt",
   stack: ["Next.js", "TypeScript", "Prisma ORM", "PostgreSQL", "Tailwind CSS", "Vercel"],
@@ -31,9 +31,9 @@ export const featuredProject: FeaturedProject = {
     { label: "Autenticação", value: "JWT + 2FA" },
   ],
   highlights: [
-    "Painel administrativo seguro com autenticação JWT, 2FA/OTP e mitigação de timing attacks.",
-    "Gestão dinâmica de ementa em árvore a 3 níveis com integridade relacional.",
-    "Motor timezone-aware de cálculo de reabertura após férias com suporte a WEST (Lisboa).",
+    "Gestão dinâmica de ementa em árvore a 3 níveis com integridade relacional via Prisma.",
+    "Motor timezone-aware com compensação automática do fuso horário de Lisboa (WEST/UTC+1) e cálculo dinâmico de reabertura após encerramento temporário.",
+    "Painel administrativo seguro com autenticação baseada em JWT HttpOnly, 2FA/OTP, rate limiting e cabeçalhos de proteção HSTS.",
   ],
 };
 
@@ -52,7 +52,7 @@ export const projects: Project[] = [
   {
     title: "Clínica Dentária Santa Catarina",
     description:
-      "Plataforma web institucional para serviços de medicina dentária, com interface moderna, apresentação clínica detalhada, secção de agendamento/contactos e foco em conversão e UX responsiva.",
+      "Plataforma web institucional desenvolvida para serviços de medicina dentária, com interface moderna, secção interativa de marcação de consultas e foco na conversão e experiência de utilizador.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     status: "Em Produção",
     liveUrl: "https://clinica-dentaria-santa-catarina.vercel.app",
@@ -62,7 +62,7 @@ export const projects: Project[] = [
   {
     title: "Pede Já",
     description:
-      "Plataforma de pedidos online para restauração fast-food com personalização dinâmica de menus, carrinho de compras interativo e gestão de pedidos em tempo real.",
+      "Plataforma de encomendas online para o setor da restauração, integrando personalização de menus, carrinho interativo e gestão de fluxos de pedidos em tempo real.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
     status: "Em Desenvolvimento",
     category: "Fullstack",
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     title: "EasyTicket",
     description:
-      "Sistema de bilheteira digital e gestão de eventos com controlo de acessos, validação de ingressos e gestão de base de dados relacional.",
+      "Sistema de gestão de eventos e bilheteira digital com controlo de acessos, emissão de ingressos e integridade em base de dados relacional.",
     stack: ["PHP", "MySQL", "JavaScript", "HTML/CSS"],
     status: "Open Source",
     repoUrl: "https://github.com/taigueis/easyticket.com",
