@@ -54,7 +54,7 @@ export const projects: Project[] = [
   {
     title: "Clínica Dentária Santa Catarina",
     description:
-      "Plataforma web institucional desenvolvida para serviços de medicina dentária, com interface moderna, secção interativa de marcação de consultas e foco na conversão e experiência de utilizador.",
+      "Site institucional multi-página para uma clínica de medicina dentária: páginas dedicadas por especialidade, blog clínico, galeria de casos reais com comparação antes/depois, formulário de marcação de consulta e contacto direto via WhatsApp. SEO técnico completo (sitemap, robots, Open Graph dinâmico) para maximizar a descoberta orgânica.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     status: "Em Produção",
     liveUrl: "https://clinica-dentaria-santa-catarina.vercel.app",
@@ -64,20 +64,31 @@ export const projects: Project[] = [
   {
     title: "Pede Já",
     description:
-      "Plataforma de encomendas online para o setor da restauração, integrando personalização de menus, carrinho interativo e gestão de fluxos de pedidos em tempo real.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+      "Plataforma de food delivery com quatro interfaces dedicadas por papel — Cliente, Restaurante, Admin e DevOps. Inclui fila operacional em tempo real com alertas de SLA, despacho de estafetas in-house sem dependência de serviços externos, dashboard enterprise com KPIs e aprovação de novos parceiros, e onboarding de restaurantes sujeito a validação. Projeto de equipa em desenvolvimento ativo.",
+    stack: ["React", "Vite", "Supabase", "Tailwind CSS"],
     status: "Em Desenvolvimento",
+    repoUrl: "https://github.com/franciscox05/PedeJa-Project",
     category: "Fullstack",
     size: "md",
   },
   {
     title: "EasyTicket",
     description:
-      "Sistema de gestão de eventos e bilheteira digital com controlo de acessos, emissão de ingressos e integridade em base de dados relacional.",
+      "Sistema de bilhética para transporte público rodoviário: compra e validação de bilhetes, carregamento de saldo, gestão de múltiplas linhas de autocarro (rotas e horários) e um painel administrativo para gerir frota, trajetos e contas de utilizador.",
     stack: ["PHP", "MySQL", "JavaScript", "HTML/CSS"],
     status: "Open Source",
     repoUrl: "https://github.com/taigueis/easyticket.com",
     category: "Fullstack",
+    size: "sm",
+  },
+  {
+    title: "Plataforma de Gestão de Horários",
+    description:
+      "Aplicação académica para gestão de escalas de turnos numa loja de retalho, com três módulos integrados num único projeto Maven: API REST (Spring Boot), cliente desktop (JavaFX) e interface web. Suporta geração automática de propostas mensais de horário, pedidos de folga e permutas entre colaboradores, aprovação de preferências pela gerência e relatórios mensais de horas. Desenvolvida em equipa no âmbito de unidades curriculares universitárias (Projeto II).",
+    stack: ["Java", "Spring Boot", "Spring Data JPA", "PostgreSQL", "JavaFX", "Maven"],
+    status: "Open Source",
+    repoUrl: "https://github.com/franciscox05/PlataformaGestaoHorarios",
+    category: "Algoritmos & Bases de Dados",
     size: "sm",
   },
 ];
