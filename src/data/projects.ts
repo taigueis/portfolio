@@ -24,6 +24,8 @@ export const featuredProject: FeaturedProject = {
     "Plataforma pública e painel de administração para um espaço de restauração, com gestão dinâmica de ementa, motor autónomo de reabertura após encerramento temporário e uma superfície de autenticação endurecida ao nível de produção.",
   status: "Em Produção",
   url: "https://www.uniaofrancesinhas.pt/",
+  // repoUrl fica de fora: código de cliente, repositório GitHub privado —
+  // sem botão "Código" (ver o `featuredProject.repoUrl &&` em featured-project.tsx).
   stack: ["Next.js", "TypeScript", "Prisma ORM", "PostgreSQL", "Tailwind CSS", "Vercel"],
   metrics: [
     { label: "Níveis de ementa", value: "3" },
