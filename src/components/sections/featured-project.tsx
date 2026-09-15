@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { featuredProject } from "@/data/projects";
@@ -35,27 +36,15 @@ export function FeaturedProject() {
                   {featuredProject.url.replace("https://", "")}
                 </div>
               </div>
-              <div className="relative flex aspect-[16/11] items-center justify-center bg-[radial-gradient(circle_at_50%_20%,rgba(124,108,255,0.14),transparent_60%)] p-8">
-                <div className="flex flex-col items-center gap-3 text-center">
-                  <span className="font-mono text-[11px] uppercase tracking-widest text-accent">
-                    {featuredProject.client}
-                  </span>
-                  <span className="text-2xl font-medium text-foreground">
-                    {featuredProject.title}
-                  </span>
-                  <div className="mt-2 grid grid-cols-3 gap-6">
-                    {featuredProject.metrics.map((metric) => (
-                      <div key={metric.label} className="flex flex-col items-center gap-1">
-                        <span className="font-mono text-lg font-medium text-foreground">
-                          {metric.value}
-                        </span>
-                        <span className="max-w-[6.5rem] text-[10px] leading-tight text-foreground-subtle">
-                          {metric.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div className="relative aspect-[16/11] overflow-hidden">
+                <Image
+                  src="/projects/uniao-francesinhas-preview.webp"
+                  alt={`Captura de ecrã do website em produção de ${featuredProject.title}`}
+                  fill
+                  sizes="(min-width: 1024px) 60vw, 100vw"
+                  className="object-cover object-top transition-transform duration-500 hover:scale-[1.02]"
+                  priority
+                />
               </div>
             </div>
 
