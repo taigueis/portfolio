@@ -72,6 +72,36 @@ export const projects: Project[] = [
     size: "md",
   },
   {
+    title: "Restaurante Chelsea",
+    description:
+      "Site institucional para um restaurante de peixe e marisco em Póvoa de Varzim, com secções de ementa estruturada, mapa de localização integrado e ligação direta para reserva de mesa. Foco em performance e SEO local para captação de clientes da zona.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    status: "Em Produção",
+    liveUrl: "https://restaurante-chelsea.vercel.app",
+    category: "Fullstack",
+    size: "sm",
+  },
+  {
+    title: "Sabores",
+    description:
+      "Site institucional para um restaurante tradicional português em Vila do Conde, com ementa detalhada por secções, galeria de imagens e fluxo de reserva de mesa. Estruturado para conversão de visitantes em clientes através de contactos diretos e prova social (avaliações).",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    status: "Em Produção",
+    liveUrl: "https://sabores-snackbar.vercel.app",
+    category: "Fullstack",
+    size: "sm",
+  },
+  {
+    title: "NutriCut PT",
+    description:
+      "Ferramenta pessoal de comparação nutricional de alimentos vendidos em Portugal, orientada a eficiência de proteína, fase de cut e hipertrofia, com análise de custo-benefício por produto.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    status: "Em Produção",
+    liveUrl: "https://fat-secret.vercel.app",
+    category: "Fullstack",
+    size: "sm",
+  },
+  {
     title: "EasyTicket",
     description:
       "Sistema de bilhética para transporte público rodoviário: compra e validação de bilhetes, carregamento de saldo, gestão de múltiplas linhas de autocarro (rotas e horários) e um painel administrativo para gerir frota, trajetos e contas de utilizador.",
