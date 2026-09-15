@@ -25,7 +25,12 @@ export function FeaturedProject() {
         <SpotlightCard spotlightColor="rgba(124,108,255,0.16)" className="p-1.5">
           <div className="grid gap-6 lg:grid-cols-5">
             {/* Browser mockup */}
-            <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-zinc-950/60 shadow-2xl backdrop-blur-sm lg:col-span-3">
+            <a
+              href={featuredProject.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-zinc-950/60 shadow-2xl backdrop-blur-sm lg:col-span-3"
+            >
               <div className="flex h-10 items-center gap-3 border-b border-white/5 bg-zinc-900/80 px-4">
                 <div className="flex gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
@@ -45,12 +50,14 @@ export function FeaturedProject() {
                   height={807}
                   quality={95}
                   sizes="(min-width: 1024px) 60vw, 100vw"
-                  className="block aspect-[16/10] w-full h-auto object-cover object-top transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-105"
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  className="pointer-events-auto block aspect-[16/10] w-full h-auto select-none object-cover object-top transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-105"
                   priority
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-transparent" />
               </div>
-            </div>
+            </a>
 
             {/* Details */}
             <div className="flex flex-col gap-5 p-7 lg:col-span-2 lg:p-8">
