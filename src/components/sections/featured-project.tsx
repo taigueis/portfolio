@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Lock } from "lucide-react";
 import { featuredProject } from "@/data/projects";
 import { Reveal } from "@/components/ui/reveal";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
@@ -23,28 +23,32 @@ export function FeaturedProject() {
 
       <Reveal delay={0.1} className="mt-10">
         <SpotlightCard spotlightColor="rgba(124,108,255,0.16)" className="p-1.5">
-          <div className="grid gap-0 overflow-hidden rounded-[calc(var(--radius-lg)-6px)] lg:grid-cols-5">
+          <div className="grid gap-6 lg:grid-cols-5">
             {/* Browser mockup */}
-            <div className="border-b border-border bg-background-elevated lg:col-span-3 lg:border-b-0 lg:border-r">
-              <div className="flex items-center gap-2 border-b border-border px-4 py-3">
+            <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-zinc-950/60 shadow-2xl backdrop-blur-sm lg:col-span-3">
+              <div className="flex h-10 items-center gap-3 border-b border-white/5 bg-zinc-900/80 px-4">
                 <div className="flex gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                 </div>
-                <div className="ml-2 flex-1 truncate rounded-md bg-white/[0.04] px-3 py-1 font-mono text-[11px] text-foreground-subtle">
+                <div className="mx-auto flex max-w-[260px] items-center gap-1.5 truncate rounded-md border border-white/5 bg-zinc-950/50 px-3 py-0.5 font-mono text-[11px] text-zinc-400">
+                  <Lock size={10} className="shrink-0" />
                   {featuredProject.url.replace("https://", "")}
                 </div>
               </div>
-              <div className="relative aspect-[16/11] overflow-hidden">
+              <div className="relative overflow-hidden">
                 <Image
-                  src="/projects/uniao-francesinhas-preview.webp"
+                  src="/projects/uniao-preview.png"
                   alt={`Captura de ecrã do website em produção de ${featuredProject.title}`}
-                  fill
+                  width={1897}
+                  height={807}
+                  quality={95}
                   sizes="(min-width: 1024px) 60vw, 100vw"
-                  className="object-cover object-top transition-transform duration-500 hover:scale-[1.02]"
+                  className="block aspect-[16/10] w-full h-auto object-cover object-top transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-105"
                   priority
                 />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-transparent" />
               </div>
             </div>
 
