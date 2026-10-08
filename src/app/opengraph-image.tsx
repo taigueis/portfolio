@@ -59,7 +59,7 @@ export default async function Image() {
             color: "#a3a3ab",
           }}
         >
-          Software Engineer / Fullstack Web &amp; Mobile Developer
+          Software Engineer / Fullstack Web &amp; Backend Developer
         </div>
       </div>
     ),

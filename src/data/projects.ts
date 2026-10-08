@@ -3,7 +3,7 @@ export type Metric = {
   value: string;
 };
 
-export type ProjectStatus = "Em Produção" | "Em Desenvolvimento" | "Open Source";
+export type ProjectStatus = "Em Produção" | "Em Desenvolvimento" | "Open Source" | "Descontinuado";
 
 export type FeaturedProject = {
   title: string;
@@ -39,37 +39,72 @@ export const featuredProject: FeaturedProject = {
   ],
 };
 
+/**
+ * Grupos de apresentação da grelha, pela ordem em que são mostrados:
+ * - flagship: os trabalhos de maior peso técnico (cartões grandes);
+ * - client:   sites institucionais entregues a clientes reais;
+ * - personal: ferramentas e utilitários pessoais.
+ */
+export type ProjectTier = "flagship" | "client" | "personal";
+
 export type Project = {
   title: string;
   description: string;
   stack: string[];
   status: ProjectStatus;
+  /** Selo de contexto visível no cartão (ex.: "PAP · 19/20"). */
+  context: string;
+  tier: ProjectTier;
   repoUrl?: string;
   liveUrl?: string;
   category: "Fullstack" | "Mobile" | "Algoritmos & Bases de Dados";
-  size?: "sm" | "md" | "lg";
 };
 
+/** A ordem do array é a ordem de apresentação dentro de cada grupo. */
 export const projects: Project[] = [
+  {
+    title: "Plataforma de Gestão de Horários",
+    description:
+      "Gestão de escalas de turnos numa loja de retalho, desenvolvida em equipa com a Omnium Retail nos Projetos II e III. Três módulos num único projeto Maven — API REST (Spring Boot), cliente desktop (JavaFX) e interface web — com geração automática de propostas mensais de horário, pedidos de folga e permutas entre colaboradores, aprovação de preferências pela gerência e relatórios mensais de horas. O Projeto III dá continuidade ao trabalho com uma nova stack em Laravel.",
+    stack: ["Java 25", "Spring Boot", "Spring Data JPA", "PostgreSQL", "JavaFX", "Maven"],
+    status: "Open Source",
+    context: "Projeto Empresarial · Omnium Retail",
+    tier: "flagship",
+    repoUrl: "https://github.com/franciscox05/PlataformaGestaoHorarios",
+    category: "Algoritmos & Bases de Dados",
+  },
+  {
+    title: "Pede Já",
+    description:
+      "Plataforma de food delivery com quatro interfaces dedicadas por papel — Cliente, Restaurante, Admin e DevOps. Inclui fila operacional em tempo real com alertas de SLA, despacho de estafetas in-house sem dependência de serviços externos, dashboard enterprise com KPIs e aprovação de novos parceiros, e onboarding de restaurantes sujeito a validação. Projeto de equipa, concluído como MVP e entretanto descontinuado.",
+    stack: ["React", "Vite", "Supabase", "Tailwind CSS"],
+    status: "Descontinuado",
+    context: "Projeto de Equipa",
+    tier: "flagship",
+    repoUrl: "https://github.com/franciscox05/PedeJa-Project",
+    category: "Fullstack",
+  },
+  {
+    title: "EasyTicket",
+    description:
+      "Sistema de bilhética para transporte público rodoviário com bilhetes em QR Code: compra e validação de bilhetes, carregamento de saldo, gestão de múltiplas linhas de autocarro (rotas e horários) e um painel administrativo para gerir frota, trajetos e contas de utilizador.",
+    stack: ["PHP", "MySQL", "JavaScript", "HTML/CSS"],
+    status: "Open Source",
+    context: "PAP · 19/20",
+    tier: "flagship",
+    repoUrl: "https://github.com/taigueis/easyticket.com",
+    category: "Fullstack",
+  },
   {
     title: "Clínica Dentária Santa Catarina",
     description:
       "Site institucional multi-página para uma clínica de medicina dentária: páginas dedicadas por especialidade, blog clínico, galeria de casos reais com comparação antes/depois, formulário de marcação de consulta e contacto direto via WhatsApp. SEO técnico completo (sitemap, robots, Open Graph dinâmico) para maximizar a descoberta orgânica.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     status: "Em Produção",
+    context: "Cliente Real",
+    tier: "client",
     liveUrl: "https://clinica-dentaria-santa-catarina.vercel.app",
     category: "Fullstack",
-    size: "md",
-  },
-  {
-    title: "Pede Já",
-    description:
-      "Plataforma de food delivery com quatro interfaces dedicadas por papel — Cliente, Restaurante, Admin e DevOps. Inclui fila operacional em tempo real com alertas de SLA, despacho de estafetas in-house sem dependência de serviços externos, dashboard enterprise com KPIs e aprovação de novos parceiros, e onboarding de restaurantes sujeito a validação. Projeto de equipa em desenvolvimento ativo.",
-    stack: ["React", "Vite", "Supabase", "Tailwind CSS"],
-    status: "Em Desenvolvimento",
-    repoUrl: "https://github.com/franciscox05/PedeJa-Project",
-    category: "Fullstack",
-    size: "md",
   },
   {
     title: "Restaurante Chelsea",
@@ -77,9 +112,10 @@ export const projects: Project[] = [
       "Site institucional para um restaurante de peixe e marisco em Póvoa de Varzim, com secções de ementa estruturada, mapa de localização integrado e ligação direta para reserva de mesa. Foco em performance e SEO local para captação de clientes da zona.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     status: "Em Produção",
+    context: "Cliente Real",
+    tier: "client",
     liveUrl: "https://restaurante-chelsea.vercel.app",
     category: "Fullstack",
-    size: "sm",
   },
   {
     title: "Sabores",
@@ -87,9 +123,10 @@ export const projects: Project[] = [
       "Site institucional para um restaurante tradicional português em Vila do Conde, com ementa detalhada por secções, galeria de imagens e fluxo de reserva de mesa. Estruturado para conversão de visitantes em clientes através de contactos diretos e prova social (avaliações).",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     status: "Em Produção",
+    context: "Cliente Real",
+    tier: "client",
     liveUrl: "https://sabores-snackbar.vercel.app",
     category: "Fullstack",
-    size: "sm",
   },
   {
     title: "NutriCut PT",
@@ -97,28 +134,9 @@ export const projects: Project[] = [
       "Ferramenta pessoal de comparação nutricional de alimentos vendidos em Portugal, orientada a eficiência de proteína, fase de cut e hipertrofia, com análise de custo-benefício por produto.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     status: "Em Produção",
+    context: "Ferramenta Pessoal",
+    tier: "personal",
     liveUrl: "https://fat-secret.vercel.app",
     category: "Fullstack",
-    size: "sm",
-  },
-  {
-    title: "EasyTicket",
-    description:
-      "Sistema de bilhética para transporte público rodoviário: compra e validação de bilhetes, carregamento de saldo, gestão de múltiplas linhas de autocarro (rotas e horários) e um painel administrativo para gerir frota, trajetos e contas de utilizador.",
-    stack: ["PHP", "MySQL", "JavaScript", "HTML/CSS"],
-    status: "Open Source",
-    repoUrl: "https://github.com/taigueis/easyticket.com",
-    category: "Fullstack",
-    size: "sm",
-  },
-  {
-    title: "Plataforma de Gestão de Horários",
-    description:
-      "Aplicação académica para gestão de escalas de turnos numa loja de retalho, com três módulos integrados num único projeto Maven: API REST (Spring Boot), cliente desktop (JavaFX) e interface web. Suporta geração automática de propostas mensais de horário, pedidos de folga e permutas entre colaboradores, aprovação de preferências pela gerência e relatórios mensais de horas. Desenvolvida em equipa no âmbito de unidades curriculares universitárias (Projeto II).",
-    stack: ["Java", "Spring Boot", "Spring Data JPA", "PostgreSQL", "JavaFX", "Maven"],
-    status: "Open Source",
-    repoUrl: "https://github.com/franciscox05/PlataformaGestaoHorarios",
-    category: "Algoritmos & Bases de Dados",
-    size: "sm",
   },
 ];

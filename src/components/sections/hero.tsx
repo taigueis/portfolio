@@ -51,9 +51,8 @@ export function Hero() {
           className="animate-fade-up max-w-xl text-balance text-base leading-relaxed text-foreground-muted sm:text-lg"
         >
           Sou o {profile.name}, {profile.role} especializado no desenvolvimento Fullstack
-          Web & Mobile. Projeto e construo soluções digitais completas, escaláveis e de
-          elevado desempenho — desde a modelação da base de dados e arquitetura de backend
-          até à interface de utilizador.
+          Web & Backend. Construo sites e plataformas em Next.js, Spring Boot e Laravel — desde
+          a modelação da base de dados e arquitetura de backend até à interface de utilizador.
         </p>
 
         <div

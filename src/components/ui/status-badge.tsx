@@ -5,6 +5,7 @@ const styles: Record<ProjectStatus, string> = {
   "Em Produção": "border-success/25 bg-success/10 text-success",
   "Em Desenvolvimento": "border-amber-400/25 bg-amber-400/10 text-amber-300",
   "Open Source": "border-sky-400/25 bg-sky-400/10 text-sky-300",
+  Descontinuado: "border-zinc-400/25 bg-zinc-400/10 text-zinc-400",
 };
 
 export function StatusBadge({

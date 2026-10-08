@@ -1,7 +1,7 @@
 export const profile = {
   name: "Tiago Costa",
   role: "Engenheiro de Software",
-  tagline: "Fullstack Web & Mobile Development",
+  tagline: "Fullstack Web & Backend Development",
   location: "Portugal",
   email: "tiago1342006@gmail.com",
   status: "Disponível para novos projetos e desafios",

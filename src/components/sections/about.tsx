@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const facts = [
-  { label: "Foco", value: "Fullstack Web & Mobile" },
+  { label: "Foco", value: "Fullstack Web & Backend" },
   { label: "Abordagem", value: "Arquitetura antes de código" },
   { label: "Base", value: "Portugal, disponível para remoto" },
 ];

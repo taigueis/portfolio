@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 const title = "Tiago Costa | Software Engineer & Fullstack Developer";
 const description =
-  "Portfólio de Engenharia de Software e Desenvolvimento Fullstack. Especialista em Next.js, TypeScript, arquitetura de sistemas e aplicações web/mobile de elevado desempenho.";
+  "Portfólio de Engenharia de Software e Desenvolvimento Fullstack. Desenvolvimento de plataformas web e backend com Next.js, TypeScript, Spring Boot e Laravel, da base de dados à interface.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
