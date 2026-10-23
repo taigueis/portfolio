@@ -215,14 +215,4 @@ export const projects: Project[] = [
     liveUrl: "https://fat-secret.vercel.app",
     category: "Fullstack",
   },
-  {
-    title: "Treinos Tiago",
-    description:
-      "Hub pessoal de treino que cruza o export do Hevy com o plano Push/Pull/Upper/Legs: carga e reps a bater por exercício, comparação entre ginásios, gráficos de progressão e consistência. Gera um build estático por perfil e publica uma versão cifrada com login.",
-    stack: ["JavaScript","Tailwind CSS","Node.js","Vercel"],
-    status: "Em Produção",
-    context: "Ferramenta Pessoal · Privado",
-    tier: "personal",
-    category: "Fullstack",
-  },
 ];
