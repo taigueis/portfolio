@@ -43,9 +43,10 @@ export const featuredProject: FeaturedProject = {
  * Grupos de apresentação da grelha, pela ordem em que são mostrados:
  * - flagship: os trabalhos de maior peso técnico (cartões grandes);
  * - client:   sites institucionais entregues a clientes reais;
+ * - academic: trabalhos de unidades curriculares e hackathons;
  * - personal: ferramentas e utilitários pessoais.
  */
-export type ProjectTier = "flagship" | "client" | "personal";
+export type ProjectTier = "flagship" | "client" | "academic" | "personal";
 
 export type Project = {
   title: string;
@@ -57,7 +58,7 @@ export type Project = {
   tier: ProjectTier;
   repoUrl?: string;
   liveUrl?: string;
-  category: "Fullstack" | "Mobile" | "Algoritmos & Bases de Dados";
+  category: "Fullstack" | "Mobile" | "Algoritmos & Bases de Dados" | "Inteligência Artificial" | "Backend & APIs";
 };
 
 /** A ordem do array é a ordem de apresentação dentro de cada grupo. */
@@ -96,6 +97,18 @@ export const projects: Project[] = [
     category: "Fullstack",
   },
   {
+    title: "FinancasApp",
+    description:
+      "PWA multi-utilizador para registo de gastos e ganhos, balanço mensal e acompanhamento de património, instalável no iPhone. Inclui uma conta-corrente entre amigos com pedidos de amizade, movimentos partilhados que exigem aceitação dos dois lados e notificações push disparadas por triggers na base de dados. Toda a escrita entre utilizadores passa por funções SQL security definer, com testes SQL dedicados.",
+    stack: ["React 19","Vite","Supabase","PostgreSQL","Tailwind CSS","PWA"],
+    status: "Em Produção",
+    context: "Parceria · Francisco Gomes",
+    tier: "flagship",
+    repoUrl: "https://github.com/franciscox05/financas-app",
+    liveUrl: "https://financas-app-psi-one.vercel.app",
+    category: "Fullstack",
+  },
+  {
     title: "Clínica Dentária Santa Catarina",
     description:
       "Site institucional multi-página para uma clínica de medicina dentária: páginas dedicadas por especialidade, blog clínico, galeria de casos reais com comparação antes/depois, formulário de marcação de consulta e contacto direto via WhatsApp. SEO técnico completo (sitemap, robots, Open Graph dinâmico) para maximizar a descoberta orgânica.",
@@ -129,6 +142,69 @@ export const projects: Project[] = [
     category: "Fullstack",
   },
   {
+    title: "Gabi Estética",
+    description:
+      "Site institucional para uma esteticista em Amorim, Póvoa de Varzim, pensado para clientes que chegam do Instagram e do WhatsApp: serviços por categoria (unhas, pés, depilação laser), produtos e formações, e marcação por WhatsApp com mensagem pré-preenchida. Inclui ainda o desenho de um cartão NFC de avaliações para o balcão.",
+    stack: ["Astro","Tailwind CSS","Vercel"],
+    status: "Em Produção",
+    context: "Cliente Real",
+    tier: "client",
+    liveUrl: "https://gabi-estetica.vercel.app",
+    category: "Fullstack",
+  },
+  {
+    title: "Raiz",
+    description:
+      "Protótipo mobile-first desenvolvido em equipa no hackathon UNIVC x Untile para fixar jovens em Viana do Castelo: planos espontâneos e presenciais com vagas limitadas, uma árvore pessoal que cresce a cada plano e um guia de IA local com voz, servido por função serverless com fallback para respostas pré-escritas.",
+    stack: ["React 19","Vite","Tailwind CSS","Leaflet","API Claude","Vercel"],
+    status: "Descontinuado",
+    context: "Hackathon · UNIVC x Untile",
+    tier: "academic",
+    category: "Inteligência Artificial",
+  },
+  {
+    title: "PriceCompare",
+    description:
+      "Aplicação web full-stack para comparar preços entre lojas, com sistema de credibilidade baseado em votos (um voto por utilizador), perfis User/UserManager/Admin, histórico de preços e painel administrativo. Seis sprints em Scrum, com CI e testes automatizados.",
+    stack: [".NET 10","Blazor","EF Core","PostgreSQL","xUnit"],
+    status: "Descontinuado",
+    context: "Engenharia de Software II",
+    tier: "academic",
+    category: "Fullstack",
+  },
+  {
+    title: "QuickDressKids",
+    description:
+      "App móvel para reserva de roupa de criança em lojas, com catálogo, stock por tamanho e gestão de reservas. Desenvolvida com diário de desenvolvimento por sessão e gerada como APK Android.",
+    stack: ["Ionic","Angular","Capacitor","TypeScript"],
+    status: "Descontinuado",
+    context: "Interação Homem-Máquina",
+    tier: "academic",
+    category: "Mobile",
+  },
+  {
+    title: "Triagem do Cancro da Mama",
+    description:
+      "Trabalho de Inteligência Artificial sobre dados clínicos e imagem médica (BreastMNIST): baseline tabular, modelos clássicos sobre pixels (Regressão Logística e Random Forest) e uma rede convolucional em PyTorch com pesos ponderados para classes desequilibradas.",
+    stack: ["Python","PyTorch","scikit-learn","Jupyter"],
+    status: "Descontinuado",
+    context: "Introdução à IA",
+    tier: "academic",
+    category: "Inteligência Artificial",
+  },
+  {
+    title: "API de Alunos e Cursos",
+    description:
+      "API RESTful com Node.js, Express e MongoDB Atlas em arquitetura MVC, documentada com Swagger, mais um front-end em Fetch API e uma API simulada com json-server. Coleção Postman de testes e deploy por Blueprint no Render.",
+    stack: ["Node.js","Express","MongoDB","Swagger","Render"],
+    status: "Em Produção",
+    context: "Sistemas de Informação e Redes",
+    tier: "academic",
+    repoUrl: "https://github.com/taigueis/sir-trabalho1-restapi",
+    liveUrl: "https://sir-frontend-alunos.onrender.com",
+    category: "Backend & APIs",
+  },
+  {
     title: "NutriCut PT",
     description:
       "Ferramenta pessoal de comparação nutricional de alimentos vendidos em Portugal, orientada a eficiência de proteína, fase de cut e hipertrofia, com análise de custo-benefício por produto.",
@@ -137,6 +213,16 @@ export const projects: Project[] = [
     context: "Ferramenta Pessoal",
     tier: "personal",
     liveUrl: "https://fat-secret.vercel.app",
+    category: "Fullstack",
+  },
+  {
+    title: "Treinos Tiago",
+    description:
+      "Hub pessoal de treino que cruza o export do Hevy com o plano Push/Pull/Upper/Legs: carga e reps a bater por exercício, comparação entre ginásios, gráficos de progressão e consistência. Gera um build estático por perfil e publica uma versão cifrada com login.",
+    stack: ["JavaScript","Tailwind CSS","Node.js","Vercel"],
+    status: "Em Produção",
+    context: "Ferramenta Pessoal · Privado",
+    tier: "personal",
     category: "Fullstack",
   },
 ];

@@ -17,7 +17,8 @@ const groups: {
 }[] = [
   { tier: "flagship", label: "Projetos principais", columns: "lg:grid-cols-3" },
   { tier: "client", label: "Sites para clientes", columns: "lg:grid-cols-3" },
-  { tier: "personal", label: "Ferramentas pessoais", columns: "lg:grid-cols-1" },
+  { tier: "academic", label: "Académico & hackathons", columns: "lg:grid-cols-3" },
+  { tier: "personal", label: "Ferramentas pessoais", columns: "lg:grid-cols-2" },
 ];
 
 function ProjectCard({ project, large }: { project: Project; large: boolean }) {

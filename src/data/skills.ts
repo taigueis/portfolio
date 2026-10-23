@@ -8,7 +8,7 @@ export const skillCategories: SkillCategory[] = [
   {
     eyebrow: "frontend",
     title: "Frontend & Interfaces",
-    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Angular", "Ionic", "JavaFX"],
+    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Angular", "Ionic", "Astro", "Blazor", "JavaFX"],
   },
   {
     eyebrow: "backend",
@@ -23,12 +23,13 @@ export const skillCategories: SkillCategory[] = [
       "MySQL",
       "MongoDB",
       "T-SQL",
+      "EF Core",
     ],
   },
   {
     eyebrow: "languages",
     title: "Linguagens de Programação",
-    skills: ["TypeScript", "JavaScript", "Java", "PHP", "C", "SQL"],
+    skills: ["TypeScript", "JavaScript", "Java", "C#", "Python", "PHP", "C", "SQL"],
   },
   {
     eyebrow: "tooling",
