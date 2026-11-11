@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { profile } from "@/data/profile";
 import { siteUrl } from "@/lib/site";
+import { NoDrag } from "@/components/ui/no-drag";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -85,7 +86,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <NoDrag />
+        {children}
+      </body>
     </html>
   );
 }

@@ -96,9 +96,25 @@ body {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
+img,
+a {
+  -webkit-user-drag: none;
+}
+
+/* Interface e títulos não se selecionam; parágrafos continuam copiáveis. */
+h1,
+h2,
+h3,
+nav,
+button,
+a,
+label {
+  user-select: none;
+}
+
 ::selection {
-  background: var(--accent);
-  color: var(--accent-foreground);
+  background: rgba(124, 108, 255, 0.28);
+  color: #fff;
 }
 
 * {
@@ -124,6 +140,12 @@ button {
     black 40%,
     transparent 100%
   );
+}
+
+/* Edge fade for the interactive dot field (same mask as .bg-grid) */
+.mask-fade {
+  mask-image: radial-gradient(ellipse 95% 85% at 50% 35%, black 45%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 35%, black 45%, transparent 100%);
 }
 
 .glass {
