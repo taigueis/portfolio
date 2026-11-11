@@ -19,7 +19,7 @@ export function AnimatedHeading({
   let index = 0;
 
   return (
-    <h1 className={className}>
+    <h1 className={cn("select-none", className)}>
       {segments.flatMap((segment, s) =>
         segment.text
           .split(" ")
