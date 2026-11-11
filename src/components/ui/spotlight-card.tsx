@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, type ComponentProps } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export function SpotlightCard({
@@ -10,6 +11,7 @@ export function SpotlightCard({
   ...props
 }: ComponentProps<"div"> & { spotlightColor?: string }) {
   const ref = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     const el = ref.current;
@@ -20,6 +22,11 @@ export function SpotlightCard({
   }
 
   return (
+    <motion.div
+      className="h-full"
+      whileHover={reduce ? undefined : { y: -3 }}
+      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+    >
     <div
       ref={ref}
       onMouseMove={handleMouseMove}
@@ -37,5 +44,6 @@ export function SpotlightCard({
       />
       <div className="relative z-10 h-full">{children}</div>
     </div>
+    </motion.div>
   );
 }
