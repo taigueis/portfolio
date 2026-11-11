@@ -126,6 +126,12 @@ button {
   );
 }
 
+/* Edge fade for the interactive dot field (same mask as .bg-grid) */
+.mask-fade {
+  mask-image: radial-gradient(ellipse 95% 85% at 50% 35%, black 45%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 35%, black 45%, transparent 100%);
+}
+
 .glass {
   background: var(--surface);
   border: 1px solid var(--border);

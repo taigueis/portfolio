@@ -7,10 +7,12 @@ import { About } from "@/components/sections/about";
 import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/sections/footer";
 import { BackToTop } from "@/components/ui/back-to-top";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
       <Navbar />
       <main className="flex-1">
         <Hero />
